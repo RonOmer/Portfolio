@@ -39,6 +39,21 @@ git push -u origin main
 
 Commit `package-lock.json` so installation uses the reviewed dependency versions. Generated files and local dependencies are excluded by `.gitignore`.
 
+## Deploy to GitHub Pages
+
+In the repository settings, open **Pages** and select **GitHub Actions** under **Build and deployment → Source**. Push the project to `main`. The workflow in `.github/workflows/deploy.yml` builds and publishes the site automatically. Follow its progress in the repository's **Actions** tab.
+
+For this repository, the site address is `https://ronomer.github.io/Portfolio/`. GitHub Pages builds use hash routes such as `/Portfolio/#/projects` and `/Portfolio/#/about#contact`, allowing direct links and refreshes on static hosting.
+
+To check the GitHub Pages build locally, run the following commands and open `http://localhost:4173/Portfolio/`.
+
+```sh
+npm run build:pages
+npm run preview
+```
+
+The Pages build derives its base path from `GITHUB_REPOSITORY` in Actions and uses `/Portfolio/` locally. This setup follows the [Vite GitHub Pages deployment guide](https://vite.dev/guide/static-deploy#github-pages).
+
 ## Deploy to Vercel
 
 Import the GitHub repository into Vercel and select the Vite framework preset. Use `npm ci` as the install command, `npm run build` as the build command, and `dist` as the output directory. Select Node.js 22.x. This site requires no environment variables.

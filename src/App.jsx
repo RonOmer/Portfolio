@@ -169,7 +169,10 @@ function Home() {
             </div>
           </div>
           <div className="portrait">
-            <img src="/assets/images/ron-omer.jpg" alt="Ron Omer" />
+            <img
+              src={`${import.meta.env.BASE_URL}assets/images/ron-omer.jpg`}
+              alt="Ron Omer"
+            />
             <div className="status">
               <i /> Open to junior roles
             </div>
@@ -481,7 +484,10 @@ function About() {
         <div className="shell page">
           <PageHead title="About" />
           <div className="aboutGrid">
-            <img src="/assets/images/ron-omer.jpg" alt="Ron Omer" />
+            <img
+              src={`${import.meta.env.BASE_URL}assets/images/ron-omer.jpg`}
+              alt="Ron Omer"
+            />
             <div className="prose big">
               <p>
                 I’m Ron, a B.Sc. Computer Science graduate from Ruppin Academic
